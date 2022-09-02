@@ -1,0 +1,17 @@
+<a
+  style="cursor: pointer;"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    <div class="multiline" style="border-style:solid;border-width:thin;text-align:left;height:100px; width: 340px; margin-inside: 10px; font-size:10pt;"><strong> Description: </strong> {{ task.description }} </div>
+  </div>
+  <div class="pull-right">
+    <p class="list-group-item-text" [ngStyle]="{color: getColor()}"><strong color="black">Priority: </strong>{{ task.priority }}</p>
+    <p class="list-group-item-text"><strong>Due Date: </strong>{{task.dueDate}}</p>
+    <p class="list-group-item-text" *ngIf="task.done"><strong>Done: </strong>Y</p>
+    <p class="list-group-item-text" *ngIf="!task.done"><strong>Done: </strong>N</p>
+    <br>
+    <button type="button" class="btn btn-light btn-sm" (click)="onDelete()" [disabled]="taskService.updateMode">Delete</button>
+    &nbsp;
+    <button type="button" class="btn btn-light btn-sm" (click)="onUpdate()" [disabled]="taskService.updateMode">Update</button>
+  </div>
+</a>

@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!taskForm.valid || taskForm.untouched">Update</button>
+          &nbsp;
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="description">Description: </label>
+            <textarea
+              type="text"
+              id="description"
+              class="form-control"
+              formControlName="description"
+              rows="6"
+              [maxLength]="200"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="priority">Priority: </label>
+            <select
+              type="text"
+              id="priority"
+              formControlName="priority"
+              class="form-control">
+              <option value="Urgent" >Urgent</option>
+              <option value="Normal">Normal</option>
+              <option value="Low">Low</option>
+            </select>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="dueDate">Due Date: </label>
+            <input
+              type="date"
+              id="dueDate"
+              class="form-control"
+              formControlName="dueDate"
+              rows="6">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="done" class="pull-left">Done?</label>
+            <input
+                  type="checkbox"
+                  id="done"
+                  class="form-control"
+                  formControlName="done"
+                  rows="6">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
